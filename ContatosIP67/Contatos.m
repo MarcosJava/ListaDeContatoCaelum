@@ -10,6 +10,23 @@
 
 @implementation Contatos
 
+@dynamic nome, telefone, email, endereco, site, latitude, longitude, foto;
+
+-(CLLocationCoordinate2D)coordinate{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
+
+//Colocando Titulo no Pin do Mapa
+- (NSString *) title {
+    return self.nome;
+}
+
+
+//Colocando Subtitulo no Pin do Mapa
+-(NSString *) subtitle {
+    return self.email;
+}
 
 
 /********************
